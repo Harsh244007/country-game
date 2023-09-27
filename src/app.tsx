@@ -28,7 +28,9 @@ const CountryCapitalGame: FunctionComponent<{
       if (clickedItem.hasOwnProperty(data[element])) {
         setClickedItems({ ...clickedItem, [element]: "SELECTED" });
       } else {
-        setClickedItems({ ...clickedItem, [element]: "WRONG" });
+        const storedKey = Object.keys(clickedItem);
+        // @ts-ignore
+        setClickedItems({ [element]: "WRONG", [storedKey]: "WRONG"} );
         return;
       }
 
@@ -44,7 +46,9 @@ const CountryCapitalGame: FunctionComponent<{
       if (foundCountry && clickedItem[foundCountry] === "SELECTED") {
         setClickedItems({ ...clickedItem, [element]: "SELECTED" });
       } else {
-        setClickedItems({ ...clickedItem, [element]: "WRONG" });
+        const storedKey = Object.keys(clickedItem);
+        // @ts-ignore
+        setClickedItems({ [element]: "WRONG", [storedKey]: "WRONG"} );
         return;
       }
     }
