@@ -63,7 +63,7 @@ const CountryCapitalGame: FunctionComponent<{
   setShowItems(updatedItems);
 };
   return (
-    <div className="flex flex-wrap gap-5 justify-around align-center">
+    <div className="flex flex-col flex-wrap gap-5 justify-around align-center">
       {showItems.length != 0 ? (
         showItems.map((e, i) => {
           return (
@@ -85,7 +85,7 @@ const CountryCapitalGame: FunctionComponent<{
       )}
       <button
   onClick={handleReset}
-  className="w-32 h-10 bg-blue-500 text-white rounded-full mt-4"
+  className="w-32 h-10 bg-blue-500 text-white mt-4"
 >
   Reset
 </button>
